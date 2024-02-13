@@ -92,8 +92,14 @@ export default function Cuisines({ find }) {
     return (
         <>
             {/*======filter=====*/}
-            <div className="flex m-10 justify-between py-20 px-3">
-                <div className="flex gap-3 justify-center items-center">
+            <div
+                className="flex m-10 justify-between py-20 px-3"
+                key={"Filter button"}
+            >
+                <div
+                    className="flex gap-3 justify-center items-center"
+                    key={"Button FIlter"}
+                >
                     <span>Show only :</span>
                     <div>
                         {listCategories.map((list) => {
@@ -152,7 +158,6 @@ export default function Cuisines({ find }) {
             <div className="flex items-center max-w-lg mx-auto bg-white p-3">
                 <div className="max-w-lg mx-auto bg-white p-6">
                     <Button
-                        key="paginationButton"
                         onNext={handleNext}
                         onPrev={handlePrev}
                         pages={pages}
