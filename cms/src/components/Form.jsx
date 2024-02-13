@@ -9,6 +9,7 @@ export default function Form({ cuisine, endPoint }) {
     console.log(endPoint);
     const [form, setForm] = useState({ ...cuisine });
     const [category, setCategory] = useState([])
+    // console.log(cuisine, 12)
 
     async function fetchCategory() {
         try {
@@ -43,14 +44,11 @@ export default function Form({ cuisine, endPoint }) {
 
     function handleChange(event) {
         const { name, value } = event.target;
-        let newValue = value; // Initialize newValue with the value from the event
-
-        // If the name is 'price', convert value to a float
+        let newValue = value;
         if (name === 'price') {
             newValue = parseFloat(value);
         }
-        // If the name is 'categoryId', convert value to an integer
-        else if (name === 'categoryId') {
+        if (name === 'categoryId') {
             newValue = parseInt(value, 0);
         }
         setForm({
@@ -60,7 +58,10 @@ export default function Form({ cuisine, endPoint }) {
     }
     useEffect(() => {
         fetchCategory()
-    }, [])
+        setForm({ ...cuisine })
+        console.log(cuisine, "63");
+        console.log(form, "64");
+    }, [cuisine])
 
     console.log(category, "ini dari form yang form");
 

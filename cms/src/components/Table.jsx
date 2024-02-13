@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import rupiah from "../helpers/priceConverter";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Table() {
     const url = "https://phase2-aio.vercel.app"
@@ -98,7 +98,7 @@ export default function Table() {
                                             <a href="#"
                                                 className="font-medium text-red-600 dark:text-red-500 hover:underline p-2"
                                             >Remove</a>||
-                                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline p-2">edit</a>
+                                            <Link to={`/edit/${el.id}`} className="font-medium text-red-600 dark:text-red-500 hover:underline p-2">edit</Link>
                                         </td>
                                     </tr>
 

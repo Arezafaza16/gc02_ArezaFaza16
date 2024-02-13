@@ -1,6 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router-dom"
 import LoginPage from "./views/LoginPage";
-import HomePage from "./views/HomePage";
+import HomePage from "./views/homepage";
 import CategoryPage from "./views/CategoryPage";
 import EditPage from "./views/EditPage";
 import AddCuisine from "./views/AddCuisinePage";
