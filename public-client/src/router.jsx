@@ -5,10 +5,13 @@ import DetailPage from "./views/DetailPage";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />
-    },
-    {
-        path: "/cuisines/:id",
-        element: <DetailPage />
+        element: <HomePage />,
+        children: [
+            {
+                path: "/cuisines/:id",
+                element: <DetailPage />
+            }
+
+        ]
     }
 ])
